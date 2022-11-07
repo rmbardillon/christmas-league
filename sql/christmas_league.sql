@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2022 at 03:51 AM
+-- Generation Time: Nov 07, 2022 at 05:05 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -794,8 +794,8 @@ INSERT INTO `schedule` (`id`, `date`, `team1`, `team2`) VALUES
 (3, '2022-11-05', 'Green Dragonfish', 'Blue Sharks'),
 (4, '2022-11-06', 'Green Dragonfish', 'Purple Betta'),
 (5, '2022-11-06', 'Red Barracuda', 'Blue Sharks'),
-(6, '2022-11-12', 'Green Dragonfish', 'Purple Betta'),
-(7, '2022-11-13', 'Blue Sharks', 'Red Barracuda'),
+(6, '2022-11-12', 'Blue Sharks', 'Red Barracuda'),
+(7, '2022-11-13', 'Green Dragonfish', 'Purple Betta'),
 (8, '2022-11-19', 'Red Barracuda', 'Green Dragonfish'),
 (9, '2022-11-20', 'Purple Betta', 'Blue Sharks'),
 (10, '2022-11-26', 'Red Barracuda', 'Purple Betta'),
@@ -823,10 +823,10 @@ CREATE TABLE `standings` (
 --
 
 INSERT INTO `standings` (`id`, `img_loc`, `teams`, `win`, `loss`) VALUES
-(1, 'green.png', 'Dragonfish', 1, 0),
-(2, 'blue.png', 'Sharks', 0, 1),
-(3, 'purple.png', 'Betta', 0, 0),
-(4, 'red.png', 'Barracuda', 0, 0);
+(1, 'green.png', 'Dragonfish', 3, 0),
+(2, 'blue.png', 'Sharks', 0, 3),
+(3, 'purple.png', 'Betta', 0, 2),
+(4, 'red.png', 'Barracuda', 2, 0);
 
 -- --------------------------------------------------------
 
