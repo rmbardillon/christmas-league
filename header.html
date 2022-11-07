@@ -1,0 +1,54 @@
+<?php
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/functions.inc.php';
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Rose Pointe Sports</title>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <script defer type="text/javascript" src="assets/js/function.inc.js"></script>
+    <link rel="shortcut icon" href="assets/images/rosepointe.ico" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar navbar-dark navbar-expand-md py-3" style="background: #000000;">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <img src="assets/images/rosepointe.png" width="75px" height="75px">
+                <span id="cswd-header" style="padding-left: 9px;"><b>ROSE POINTE SPORTS</b></span>
+            </a>
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2" style="margin-top: 6px;">
+                <span class="visually-hidden">Toggle navigation</span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navcol-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'index') {echo 'active';} ?>" href="index.html">Home<br></a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'schedule') {echo 'active';} ?>" href="schedule.html">Schedule<br></a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'standings') {echo 'active';} ?>" href="standings.html">Standings</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'teams') {echo 'active';} ?>" href="teams.html">Teams</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'roster') {echo 'active';} ?>" href="roster.html">Roster</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'player-stats') {echo 'active';} ?>" href="player-stats.html">Stats</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'add-stats') {echo 'active';} ?>" href="add-stats.html">Add stats</a></li>
+            </div>
+        </div>
+    </nav>

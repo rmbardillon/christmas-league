@@ -1,0 +1,60 @@
+<?php
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/functions.inc.php';
+    if(!isset($_GET['player_id'])) {
+        header("location: add-stats.html");
+        exit();
+    }
+    $player_id = $_GET['player_id'];
+    $team_id = $_GET['team_id'];
+    $players = getData($connection, "players", "id", $player_id);
+    $teams = getData($connection, "teams", "id", $team_id);
+    $page = "add-stats";
+    include('header.html');
+?>
+
+    <section class="roster">
+            <h1>Player Stats</h1>
+        <div class="table-responsive">
+            <form action="includes/add-stats.inc.php" method="post">
+                <table class="table table-dark text-center">
+                    <thead>
+                        <tr>
+                            <th>PLAYER NAME</th>
+                            <th>TEAM NAME</th>
+                            <th>GAME NUMBER</th>
+                            <th>POINTS</th>
+                            <th>REBOUNDS</th>
+                            <th>ASSISTS</th>
+                            <th>STEALS</th>
+                            <th>BLOCKS</th>
+                            <th>FOULS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $i = 1; foreach($players as $player): foreach($teams as $team): ?>
+                        <tr>
+                            <input type="hidden" name="player_id" value="<?php echo $player['id'] ?>">
+                            <input type="hidden" name="team_id" value="<?php echo $player['team'] ?>">
+                            <td><?php echo $player['last_name'] ?></td>
+                            <td><?php echo $team['team_name'] ?></td>
+                            <td><input class="form-control" type="text" name="game_number" id="game_number"></td>
+                            <td><input class="form-control" type="text" name="points" id="points"></td>
+                            <td><input class="form-control" type="text" name="rebounds" id="rebounds"></td>
+                            <td><input class="form-control" type="text" name="assists" id="assists"></td>
+                            <td><input class="form-control" type="text" name="steals" id="steals"></td>
+                            <td><input class="form-control" type="text" name="blocks" id="blocks"></td>
+                            <td><input class="form-control" type="text" name="fouls" id="fouls"></td>
+                            <td><input class="btn btn-primary" type="submit" value="Add" name="submit"></td>
+                        </tr>
+                        
+                        <?php $i++; endforeach; endforeach; ?>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<?php
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/functions.inc.php';
+    $schedules = getResults($connection);
+    $page = "schedule";
+    include('header.html');
+?>
+    <section class="schedule">
+        <h1>SCHEDULE</h1>
+        <div class="table-responsive">
+            <table class="table table-dark" id="schedule">
+                <thead>
+                    <tr>
+                        <th>GAME NO.</th>
+                        <th>DATE</th>
+                        <th>TEAM 1</th>
+                        <th>VS</th>
+                        <th>TEAM 2</th>
+                        <th>Results</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 0; foreach ($schedules as $schedule) : ?>
+                    <?php
+                        $scheduledDate = strtotime($schedule['date']);
+                        $team1Logo = displayTeamLogo($schedule['team1']);
+                        $team2Logo = displayTeamLogo($schedule['team2']);
+                        $date = date('l jS F Y', $scheduledDate);
+                    ?>
+                    <tr>
+                        <td><?php echo($schedule['id']) ?></td>
+                        <td><?php echo($date) ?></td>
+                        <td><img class="rounded-circle me-2" width="30" height="30" src="assets/images/<?php echo $team1Logo; ?>"><?php echo($schedule['team1']) ?></td>
+                        <td>VS</td>
+                        <td><img class="rounded-circle me-2" width="30" height="30" src="assets/images/<?php echo $team2Logo; ?>"><?php echo($schedule['team2']) ?></td>
+                        <td><?php echo $schedule['team1_score']."-".$schedule['team2_score'] ?></td>
+                    </tr>
+                    <?php $i++; endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

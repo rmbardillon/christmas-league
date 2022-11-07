@@ -1,0 +1,40 @@
+<?php
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/functions.inc.php';
+    $standings = getStandings($connection);
+    $page = "standings";
+    include('header.html');
+?>
+    <section class="standings">
+        <h1>STANDINGS</h1>
+        <div class="table-responsive">
+            <table class="table table-dark" id="standings">
+                <thead>
+                    <tr>
+                        <th>TEAMS</th>
+                        <th>WIN</th>
+                        <th>LOSS</th>
+                        <th>PERCENTAGE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; foreach($standings as $standing): ?>
+                    <tr>
+                        <td>
+                            <?php echo "<b>$i</b>"; ?>
+                            <img class="rounded-circle me-2" width="30" height="30" src="assets/images/<?php echo($standing['img_loc']); ?>">
+                            <?php echo $standing['teams']; ?>
+                        </td>
+                        <td><?php echo($standing['win']) ?></td>
+                        <td><?php echo($standing['loss']) ?></td>
+                        <td><?php echo $standing['percentage']."%" ?></td>
+                    </tr>
+                    <?php $i++; endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

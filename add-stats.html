@@ -1,0 +1,37 @@
+<?php
+    require_once 'includes/dbh.inc.php';
+    require_once 'includes/functions.inc.php';
+    $players = getData($connection, "players", "", "");
+    $page = "add-stats";
+    include('header.html');
+?>
+    <section class="roster">
+            <h1>Add Scores</h1>
+        <div class="table-responsive">
+            <table class="table table-dark" id="add_stats">
+                <thead>
+                    <tr>
+                        <th>LAST NAME</th>
+                        <th>FIRST NAME</th>
+                        <th>JERSEY NUMBER</th>
+                        <th>Stats</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1; foreach($players as $player): ?>
+                    <tr>
+                        <input type="hidden" name="id" value="<?php echo $player['id'] ?>">
+                        <td><?php echo $player['last_name']; ?></td>
+                        <td><?php echo($player['first_name']) ?></td>
+                        <td><?php echo($player['jersey_number']) ?></td>
+                        <td><a class="btn btn-light" href="fill-stats.html?player_id=<?php echo $player['id'] ?>&team_id=<?php echo $player['team'] ?>">Add stats</a></td>
+                    </tr>
+                    <?php $i++; endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
