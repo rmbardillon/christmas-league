@@ -38,7 +38,7 @@ $(document).ready( function () {
         aoColumns: [
             null,
             { orderSequence: ['desc'] },
-            null,
+            { orderSequence: ['asc'] },
             { orderSequence: ['desc'] },
         ],
     },{

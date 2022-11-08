@@ -1,7 +1,7 @@
 <?php
 function getStandings($connection) {
 
-    $sql = "SELECT *, CASE WHEN win > 0 THEN CAST((win / (win+loss)) * 100 AS DECIMAL(16,2)) ELSE 0.00 END AS percentage FROM standings ORDER BY percentage DESC";
+    $sql = "SELECT *, CASE WHEN win > 0 THEN CAST((win / (win+loss)) * 100 AS DECIMAL(16,2)) ELSE 0.00 END AS percentage FROM standings ORDER BY percentage DESC, loss";
     
     $result = $connection->query($sql);
 
