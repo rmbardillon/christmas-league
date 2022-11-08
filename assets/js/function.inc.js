@@ -15,7 +15,17 @@ $(document).ready( function () {
     });
     $('#stats').DataTable({
         paging: false,
-        order: [[3, 'desc']]
+        order: [[3, 'desc']],
+        aoColumns: [
+            null,
+            null,
+            null,
+            { orderSequence: ['desc'] },
+            { orderSequence: ['desc'] },
+            { orderSequence: ['desc'] },
+            { orderSequence: ['desc'] },
+            { orderSequence: ['desc'] },
+        ],
     },{
         lengthMenu: [
             [10, 25, 50, -1],
@@ -24,7 +34,13 @@ $(document).ready( function () {
     });
     $('#standings').DataTable({
         paging: false,
-        order: [[3, 'desc']]
+        order: [[3, 'desc']],
+        aoColumns: [
+            null,
+            { orderSequence: ['desc'] },
+            null,
+            { orderSequence: ['desc'] },
+        ],
     },{
         lengthMenu: [
             [10, 25, 50, -1],

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2022 at 05:05 AM
+-- Generation Time: Nov 08, 2022 at 03:12 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -757,10 +757,10 @@ CREATE TABLE `results` (
 
 INSERT INTO `results` (`id`, `game_number`, `date`, `team1_score`, `team2_score`, `winner_id`, `losser_id`) VALUES
 (1, 1, '2022-10-23', 50, 60, 1, 4),
-(2, 2, '2022-11-05', 0, 0, 0, 0),
-(3, 3, '2022-11-05', 0, 0, 0, 0),
-(4, 4, '2022-11-06', 0, 0, 0, 0),
-(5, 5, '2022-11-06', 0, 0, 0, 0),
+(2, 2, '2022-11-05', 58, 83, 2, 3),
+(3, 3, '2022-11-05', 67, 55, 1, 4),
+(4, 4, '2022-11-06', 59, 51, 1, 3),
+(5, 5, '2022-11-06', 65, 60, 2, 4),
 (6, 6, '2022-11-12', 0, 0, 0, 0),
 (7, 7, '2022-11-13', 0, 0, 0, 0),
 (8, 8, '2022-11-19', 0, 0, 0, 0),
@@ -794,12 +794,12 @@ INSERT INTO `schedule` (`id`, `date`, `team1`, `team2`) VALUES
 (3, '2022-11-05', 'Green Dragonfish', 'Blue Sharks'),
 (4, '2022-11-06', 'Green Dragonfish', 'Purple Betta'),
 (5, '2022-11-06', 'Red Barracuda', 'Blue Sharks'),
-(6, '2022-11-12', 'Blue Sharks', 'Red Barracuda'),
-(7, '2022-11-13', 'Green Dragonfish', 'Purple Betta'),
-(8, '2022-11-19', 'Red Barracuda', 'Green Dragonfish'),
-(9, '2022-11-20', 'Purple Betta', 'Blue Sharks'),
+(6, '2022-11-12', 'Green Dragonfish', 'Red Barracuda'),
+(7, '2022-11-13', 'Blue Sharks', 'Purple Betta'),
+(8, '2022-11-19', 'Purple Betta', 'Blue Sharks'),
+(9, '2022-11-20', 'Red Barracuda', 'Green Dragonfish'),
 (10, '2022-11-26', 'Red Barracuda', 'Purple Betta'),
-(11, '2022-11-27', 'Green Dragonfish', 'Red Barracuda'),
+(11, '2022-11-27', 'Green Dragonfish', 'Purple Betta'),
 (12, '2022-12-03', 'Blue Sharks', 'Purple Betta'),
 (13, '2022-12-04', 'TBA', 'TBA'),
 (14, '2022-12-04', 'TBA', 'TBA');
