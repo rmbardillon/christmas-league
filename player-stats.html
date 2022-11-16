@@ -13,6 +13,7 @@
             <table class="table table-dark" id="stats">
                 <thead>
                     <tr>
+                        <!-- <th>No.</th> -->
                         <th>TEAM</th>
                         <th>LAST NAME</th>
                         <th>FIRST NAME</th>
@@ -24,26 +25,27 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($fixStats as $stat): ?>
+                    <?php $j = 1; foreach($fixStats as $stat): ?>
                         <tr>
-                            <?php for($i = 0; $i < sizeof($stat) - 1; $i++) { ?>
-                                <?php if ($i == 3){
-                                    echo "<td>" .$stat[$i]. "". "</td>";
-                                } else if ($i == 4){
-                                    echo "<td>" .$stat[$i]. "". "</td>";
-                                } else if ($i == 5){
-                                    echo "<td>" .$stat[$i]. "". "</td>";
-                                } else if ($i == 6){
-                                    echo "<td>" .$stat[$i]. "". "</td>";
-                                } else if ($i == 7){
-                                    echo "<td>" .$stat[$i]. "". "</td>";
-                                } else {
-                                    echo "<td>" .$stat[$i]. "</td>";
-                                }
-                            } ?>
-                            
+                            <?php 
+                                for($i = 0; $i < sizeof($stat) - 1; $i++) {
+                                    if ($i == 3){
+                                        echo "<td>" .$stat[$i]. "". "</td>";
+                                    } else if ($i == 4){
+                                        echo "<td>" .$stat[$i]. "". "</td>";
+                                    } else if ($i == 5){
+                                        echo "<td>" .$stat[$i]. "". "</td>";
+                                    } else if ($i == 6){
+                                        echo "<td>" .$stat[$i]. "". "</td>";
+                                    } else if ($i == 7){
+                                        echo "<td>" .$stat[$i]. "". "</td>";
+                                    } else {
+                                        echo "<td>" .$stat[$i]. "</td>";
+                                    }
+                                } 
+                            ?>
                         </tr>
-                        <?php endforeach; ?>
+                        <?php $j++; endforeach; ?>
                 </tbody>
             </table>
         </div>
