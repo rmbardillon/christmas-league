@@ -40,6 +40,10 @@ $(document).ready( function () {
             { orderSequence: ['desc'] },
             { orderSequence: ['asc'] },
             { orderSequence: ['desc'] },
+            null,
+            null,
+            { orderSequence: ['desc'] },
+
         ],
     },{
         lengthMenu: [

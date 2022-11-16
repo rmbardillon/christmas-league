@@ -2,6 +2,7 @@
     require_once 'includes/dbh.inc.php';
     require_once 'includes/functions.inc.php';
     $standings = getStandings($connection);
+    $quotient = getQuotient($connection);
     $page = "standings";
     include('header.html');
 ?>
@@ -15,6 +16,9 @@
                         <th>WIN</th>
                         <th>LOSS</th>
                         <th>PERCENTAGE</th>
+                        <th>TOTAL POINTS SCORED</th>
+                        <th>TOTAL POINTS ALLOWED</th>
+                        <th>QUOTIENT</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +32,39 @@
                         <td><?php echo($standing['win']) ?></td>
                         <td><?php echo($standing['loss']) ?></td>
                         <td><?php echo $standing['percentage']."%" ?></td>
+                        <td><?php 
+                                if($standing['teams'] == "Dragonfish"){
+                                    echo($quotient[4]);
+                                } else if($standing['teams'] == "Barracuda"){
+                                    echo($quotient[6]);
+                                } else if($standing['teams'] == "Sharks"){
+                                    echo($quotient[8]);
+                                } else if($standing['teams'] == "Betta"){
+                                    echo($quotient[10]);
+                                }
+                            ?></td>
+                        <td><?php 
+                                if($standing['teams'] == "Dragonfish"){
+                                    echo($quotient[5]);
+                                } else if($standing['teams'] == "Barracuda"){
+                                    echo($quotient[7]);
+                                } else if($standing['teams'] == "Sharks"){
+                                    echo($quotient[9]);
+                                } else if($standing['teams'] == "Betta"){
+                                    echo($quotient[11]);
+                                }
+                            ?></td>
+                        <td><?php 
+                                if($standing['teams'] == "Dragonfish"){
+                                    echo(round($quotient[0], 2));
+                                } else if($standing['teams'] == "Barracuda"){
+                                    echo(round($quotient[1], 2));
+                                } else if($standing['teams'] == "Sharks"){
+                                    echo(round($quotient[2], 2));
+                                } else if($standing['teams'] == "Betta"){
+                                    echo(round($quotient[3], 2));
+                                }
+                            ?></td>
                     </tr>
                     <?php $i++; endforeach; ?>
                 </tbody>

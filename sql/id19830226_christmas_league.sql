@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 16, 2022 at 01:02 AM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Host: localhost:3306
+-- Generation Time: Nov 16, 2022 at 12:01 AM
+-- Server version: 10.5.16-MariaDB
+-- PHP Version: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `christmas_league`
+-- Database: `id19830226_christmas_league`
 --
 
 -- --------------------------------------------------------
@@ -733,7 +734,74 @@ INSERT INTO `player_stats` (`id`, `player_id`, `team_id`, `game_number`, `stat_t
 (633, 55, 4, 5, 'ASTS', 0),
 (634, 55, 4, 5, 'STLS', 0),
 (635, 55, 4, 5, 'BLKS', 0),
-(636, 55, 4, 5, 'FLS', 0);
+(636, 55, 4, 5, 'FLS', 0),
+(637, 17, 2, 6, 'REBS', 1),
+(638, 17, 2, 6, 'ASTS', 1),
+(639, 17, 2, 6, 'STLS', 1),
+(640, 19, 2, 6, 'PTS', 21),
+(641, 19, 2, 6, 'REBS', 3),
+(642, 19, 2, 6, 'ASTS', 3),
+(643, 19, 2, 6, 'STLS', 1),
+(644, 20, 2, 6, 'PTS', 15),
+(645, 20, 2, 6, 'REBS', 4),
+(646, 20, 2, 6, 'ASTS', 5),
+(647, 20, 2, 6, 'STLS', 1),
+(648, 20, 2, 6, 'BLKS', 1),
+(649, 22, 2, 6, 'PTS', 14),
+(650, 22, 2, 6, 'REBS', 3),
+(651, 22, 2, 6, 'ASTS', 1),
+(652, 22, 2, 6, 'STLS', 4),
+(653, 23, 2, 6, 'REBS', 1),
+(654, 24, 2, 6, 'PTS', 10),
+(655, 24, 2, 6, 'REBS', 4),
+(656, 24, 2, 6, 'ASTS', 5),
+(657, 24, 2, 6, 'STLS', 2),
+(658, 27, 2, 6, 'PTS', 4),
+(659, 27, 2, 6, 'REBS', 8),
+(660, 27, 2, 6, 'BLKS', 5),
+(661, 28, 2, 6, 'PTS', 4),
+(662, 28, 2, 6, 'REBS', 7),
+(663, 28, 2, 6, 'ASTS', 1),
+(664, 28, 2, 6, 'STLS', 4),
+(665, 28, 2, 6, 'BLKS', 2),
+(666, 29, 2, 6, 'PTS', 6),
+(667, 29, 2, 6, 'REBS', 5),
+(668, 29, 2, 6, 'STLS', 1),
+(669, 1, 1, 6, 'PTS', 14),
+(670, 1, 1, 6, 'REBS', 16),
+(671, 1, 1, 6, 'ASTS', 4),
+(672, 1, 1, 6, 'STLS', 1),
+(673, 2, 1, 6, 'PTS', 4),
+(674, 2, 1, 6, 'REBS', 5),
+(675, 2, 1, 6, 'STLS', 1),
+(676, 3, 1, 6, 'PTS', 9),
+(677, 3, 1, 6, 'REBS', 2),
+(678, 3, 1, 6, 'ASTS', 1),
+(679, 3, 1, 6, 'STLS', 2),
+(680, 7, 1, 6, 'PTS', 9),
+(681, 7, 1, 6, 'REBS', 1),
+(682, 7, 1, 6, 'ASTS', 2),
+(683, 7, 1, 6, 'STLS', 1),
+(684, 4, 1, 5, 'PTS', 5),
+(685, 4, 1, 5, 'REBS', 1),
+(686, 4, 1, 5, 'ASTS', 1),
+(687, 8, 1, 6, 'REBS', 2),
+(688, 8, 1, 6, 'STLS', 1),
+(689, 10, 1, 6, 'STLS', 1),
+(690, 9, 1, 6, 'PTS', 8),
+(691, 9, 1, 6, 'STLS', 1),
+(692, 6, 1, 6, 'PTS', 6),
+(693, 6, 1, 6, 'ASTS', 1),
+(694, 11, 1, 6, 'PTS', 2),
+(695, 11, 1, 6, 'REBS', 3),
+(696, 12, 1, 6, 'PTS', 6),
+(697, 12, 1, 6, 'REBS', 6),
+(698, 12, 1, 6, 'ASTS', 1),
+(699, 12, 1, 6, 'STLS', 2),
+(700, 13, 1, 6, 'PTS', 2),
+(701, 13, 1, 6, 'STLS', 1),
+(702, 15, 1, 6, 'PTS', 2),
+(703, 15, 1, 6, 'BLKS', 1);
 
 -- --------------------------------------------------------
 
@@ -761,8 +829,8 @@ INSERT INTO `results` (`id`, `game_number`, `date`, `team1_score`, `team2_score`
 (3, 3, '2022-11-05', 67, 55, 1, 4),
 (4, 4, '2022-11-06', 59, 51, 1, 3),
 (5, 5, '2022-11-06', 65, 60, 2, 4),
-(6, 6, '2022-11-12', 0, 0, 0, 0),
-(7, 7, '2022-11-13', 0, 0, 0, 0),
+(6, 6, '2022-11-12', 67, 74, 2, 1),
+(7, 7, '2022-11-13', 77, 66, 4, 3),
 (8, 8, '2022-11-19', 0, 0, 0, 0),
 (9, 9, '2022-11-20', 0, 0, 0, 0),
 (10, 10, '2022-11-26', 0, 0, 0, 0),
@@ -800,7 +868,7 @@ INSERT INTO `schedule` (`id`, `date`, `team1`, `team2`) VALUES
 (9, '2022-11-20', 'Red Barracuda', 'Green Dragonfish'),
 (10, '2022-11-26', 'Red Barracuda', 'Purple Betta'),
 (11, '2022-11-27', 'Green Dragonfish', 'Purple Betta'),
-(12, '2022-12-03', 'Blue Sharks', 'Purple Betta'),
+(12, '2022-12-03', 'Blue Sharks', 'Red Barracuda'),
 (13, '2022-12-04', 'TBA', 'TBA'),
 (14, '2022-12-04', 'TBA', 'TBA');
 
@@ -823,10 +891,10 @@ CREATE TABLE `standings` (
 --
 
 INSERT INTO `standings` (`id`, `img_loc`, `teams`, `win`, `loss`) VALUES
-(1, 'green.png', 'Dragonfish', 3, 0),
-(2, 'blue.png', 'Sharks', 0, 3),
-(3, 'purple.png', 'Betta', 0, 2),
-(4, 'red.png', 'Barracuda', 2, 0);
+(1, 'green.png', 'Dragonfish', 3, 1),
+(2, 'blue.png', 'Sharks', 1, 3),
+(3, 'purple.png', 'Betta', 0, 3),
+(4, 'red.png', 'Barracuda', 3, 0);
 
 -- --------------------------------------------------------
 
@@ -905,7 +973,7 @@ ALTER TABLE `players`
 -- AUTO_INCREMENT for table `player_stats`
 --
 ALTER TABLE `player_stats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=637;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=704;
 
 --
 -- AUTO_INCREMENT for table `results`

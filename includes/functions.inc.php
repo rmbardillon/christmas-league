@@ -137,3 +137,65 @@ function addResult($connection) {
         mysqli_stmt_close($stmt);
     endforeach;
 }
+
+function getQuotient($connection) {
+    $array = array();
+    $green_total_points = 0;
+    $red_total_points = 0;
+    $blue_total_points = 0;
+    $purple_total_points = 0;
+    $green_points_allowed = 0;
+    $red_points_allowed = 0;
+    $blue_points_allowed = 0;
+    $purple_points_allowed = 0;
+    $green_quotient = 0;
+    $red_quotient = 0;
+    $blue_quotient = 0;
+    $purple_quotient = 0;
+    $results = getResults($connection);
+
+    foreach($results as $result):
+        switch($result['team1']){
+            case "Green Dragonfish":
+                $green_total_points += $result['team1_score'];
+                $green_points_allowed += $result['team2_score'];
+                break;
+            case "Red Barracuda":
+                $red_total_points += $result['team1_score'];
+                $red_points_allowed += $result['team2_score'];
+                break;
+            case "Blue Sharks":
+                $blue_total_points += $result['team1_score'];
+                $blue_points_allowed += $result['team2_score'];
+                break;
+            case "Purple Betta":
+                $purple_total_points += $result['team1_score'];
+                $purple_points_allowed += $result['team2_score'];
+                break;
+        }
+        switch($result['team2']){
+            case "Green Dragonfish":
+                $green_total_points += $result['team2_score'];
+                $green_points_allowed += $result['team1_score'];
+                break;
+            case "Red Barracuda":
+                $red_total_points += $result['team2_score'];
+                $red_points_allowed += $result['team1_score'];
+                break;
+            case "Blue Sharks":
+                $blue_total_points += $result['team2_score'];
+                $blue_points_allowed += $result['team1_score'];
+                break;
+            case "Purple Betta":
+                $purple_total_points += $result['team2_score'];
+                $purple_points_allowed += $result['team1_score'];
+                break;
+        }
+    endforeach;
+    $green_quotient = $green_total_points / $green_points_allowed;
+    $red_quotient = $red_total_points / $red_points_allowed;
+    $blue_quotient = $blue_total_points / $blue_points_allowed;
+    $purple_quotient = $purple_total_points / $purple_points_allowed;
+    array_push($array, $green_quotient, $red_quotient, $blue_quotient, $purple_quotient, $green_total_points, $green_points_allowed, $red_total_points, $red_points_allowed, $blue_total_points, $blue_points_allowed, $purple_total_points, $purple_points_allowed);
+    return $array;
+}
