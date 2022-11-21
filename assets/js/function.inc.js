@@ -32,6 +32,10 @@ $(document).ready( function () {
             [10, 25, 50, 'All'],
         ],
     });
+    $('#tsp').DataTable({
+        paging: false,
+        order: [[3, 'desc']]
+    });
     $('#standings').DataTable({
         paging: false,
         order: [[3, 'desc']],

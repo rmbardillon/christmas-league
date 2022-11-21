@@ -199,3 +199,23 @@ function getQuotient($connection) {
     array_push($array, $green_quotient, $red_quotient, $blue_quotient, $purple_quotient, $green_total_points, $green_points_allowed, $red_total_points, $red_points_allowed, $blue_total_points, $blue_points_allowed, $purple_total_points, $purple_points_allowed);
     return $array;
 }
+
+function getTSP($connection) {
+    $sql = "SELECT last_name, first_name, teams.team_name, player_stats.stat_type, SUM(player_stats.count) AS total FROM players INNER JOIN teams ON players.team=teams.id INNER JOIN player_stats ON players.id=player_stats.player_id GROUP BY first_name ORDER BY `total` DESC;";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: index.html?error=stmterror");
+        exit();
+    }
+
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $result;
+    } 
+    else {
+        $result = false;
+    }
+    mysqli_stmt_close($stmt);
+}
