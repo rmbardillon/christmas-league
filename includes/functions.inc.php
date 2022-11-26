@@ -201,7 +201,7 @@ function getQuotient($connection) {
 }
 
 function getTSP($connection) {
-    $sql = "SELECT last_name, first_name, teams.team_name, player_stats.stat_type, SUM(player_stats.count) AS total FROM players INNER JOIN teams ON players.team=teams.id INNER JOIN player_stats ON players.id=player_stats.player_id GROUP BY first_name ORDER BY `total` DESC;";
+    $sql = "SELECT players.id, last_name, first_name, teams.team_name, player_stats.stat_type, SUM(player_stats.count) AS total FROM players INNER JOIN teams ON players.team=teams.id INNER JOIN player_stats ON players.id=player_stats.player_id GROUP BY players.id ORDER BY `total` DESC;";
     $stmt = mysqli_stmt_init($connection);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: index.html?error=stmterror");
