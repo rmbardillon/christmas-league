@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 4.9.5
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 01:23 PM
--- Server version: 10.4.20-MariaDB
--- PHP Version: 8.0.8
+-- Host: localhost:3306
+-- Generation Time: Nov 27, 2022 at 12:13 PM
+-- Server version: 10.5.16-MariaDB
+-- PHP Version: 7.3.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,83 +19,8 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `christmas_league`
+-- Database: `id19830226_christmas_league`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `players`
---
-
-CREATE TABLE `players` (
-  `id` int(11) NOT NULL,
-  `team` int(11) NOT NULL,
-  `last_name` varchar(128) NOT NULL,
-  `first_name` varchar(128) NOT NULL,
-  `jersey_number` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `players`
---
-
-INSERT INTO `players` (`id`, `team`, `last_name`, `first_name`, `jersey_number`) VALUES
-(1, 1, 'Bardillon', 'Romeo Jr', 1),
-(2, 1, 'Pascua', 'Jayp', 4),
-(3, 1, 'Comia', 'Aldwin', 7),
-(4, 1, 'Charles', 'Ivan', 10),
-(5, 1, 'Bautista', 'Ivan', 26),
-(6, 1, 'Beato', 'Ejhay', 14),
-(7, 1, 'Evangelista', 'Cyrus Karl', 9),
-(8, 1, 'Esturas', 'Rafael', 11),
-(9, 1, 'Teraytay', 'Jay Lou', 13),
-(10, 1, 'Ambas', 'Cyrus', 12),
-(11, 1, 'Sagrado', 'Jimboy', 22),
-(12, 1, 'Pili', 'RJ', 23),
-(13, 1, 'Gomez', 'Gerald', 30),
-(14, 1, 'San Juan', 'Jayjay', 44),
-(15, 1, 'Rebullido', 'Mico', 77),
-(16, 2, 'Lualhati', 'Feisty_Uno', 1),
-(17, 2, 'Moralidad', 'RJ', 11),
-(18, 2, 'Dime', 'Jaypee', 15),
-(19, 2, 'Togonon', 'Joefrey', 17),
-(20, 2, 'Acosta', 'Julius', 18),
-(21, 2, 'Teraytay', 'Julius', 20),
-(22, 2, 'Espinosa', 'Juan Carlo', 21),
-(23, 2, 'Ramos', 'Romy', 22),
-(24, 2, 'Lualhati', 'Kenneth', 24),
-(25, 2, 'Balong', 'Denver', 26),
-(26, 2, 'Dime', 'Xaveir John', 27),
-(27, 2, 'Barashari', 'Regieson', 28),
-(28, 2, 'Consignado', 'Mark', 29),
-(29, 2, 'Mendoza', 'Jay-Ar', 99),
-(30, 3, 'Sesante', 'Raffy', 0),
-(31, 3, 'Balabadan', 'Joehamir', 1),
-(32, 3, 'Beldad', 'Roy', 5),
-(33, 3, 'Dizon', 'Glenn', 6),
-(34, 3, 'Monicit', 'Arnel', 8),
-(35, 3, 'Ramos', '', 10),
-(36, 3, 'Beldad', 'Robert', 11),
-(37, 3, 'Dumayas', 'Nikko', 12),
-(38, 3, 'Logo', 'Jaff', 17),
-(39, 3, 'Prejoles', '', 22),
-(40, 3, 'Da Silva', 'Rafa', 23),
-(41, 3, 'Molabola', 'Johren', 26),
-(42, 3, 'Perez', 'Gerald', 28),
-(43, 4, 'Marabe', 'Kurt', 2),
-(44, 4, 'Bebe', 'Jimaico', 4),
-(45, 4, 'Prejoles', 'MJ', 6),
-(46, 4, 'Narvaez', 'Yow', 9),
-(47, 4, 'Beldad', 'Rob', 10),
-(48, 4, 'Lucido', 'Jovencio', 11),
-(49, 4, 'Caraig', 'Garrent', 12),
-(50, 4, 'Enseñado', 'Aaron', 18),
-(51, 4, 'Ceneta', 'Jake', 19),
-(52, 4, 'Erfe', 'Jezrel', 22),
-(53, 4, 'Mago', 'Bradly', 28),
-(54, 4, 'Bebe', '', 34),
-(55, 4, 'Magpantay', 'Alfredo', 99);
 
 -- --------------------------------------------------------
 
@@ -1035,228 +961,67 @@ INSERT INTO `player_stats` (`id`, `player_id`, `team_id`, `game_number`, `stat_t
 (935, 42, 3, 10, 'REBS', 7),
 (936, 42, 3, 10, 'ASTS', 1),
 (937, 42, 3, 10, 'STLS', 1),
-(938, 32, 3, 11, 'PTS', 11),
-(939, 32, 3, 11, 'REBS', 6),
-(940, 32, 3, 11, 'ASTS', 2),
-(941, 32, 3, 11, 'STLS', 2),
-(942, 32, 3, 11, 'BLKS', 0),
-(943, 32, 3, 11, 'FLS', 0),
-(944, 34, 3, 11, 'PTS', 4),
-(945, 34, 3, 11, 'REBS', 10),
-(946, 34, 3, 11, 'ASTS', 3),
-(947, 34, 3, 11, 'STLS', 0),
-(948, 34, 3, 11, 'BLKS', 0),
-(949, 34, 3, 11, 'FLS', 0),
-(950, 36, 3, 11, 'PTS', 22),
-(951, 36, 3, 11, 'REBS', 4),
-(952, 36, 3, 11, 'ASTS', 1),
-(953, 36, 3, 11, 'STLS', 1),
-(954, 36, 3, 11, 'BLKS', 0),
-(955, 36, 3, 11, 'FLS', 0),
-(956, 38, 3, 11, 'PTS', 34),
-(957, 38, 3, 11, 'REBS', 8),
-(958, 38, 3, 11, 'ASTS', 1),
-(959, 38, 3, 11, 'STLS', 1),
-(960, 38, 3, 11, 'BLKS', 0),
-(961, 38, 3, 11, 'FLS', 0),
-(962, 41, 3, 11, 'PTS', 2),
-(963, 41, 3, 11, 'REBS', 14),
-(964, 41, 3, 11, 'ASTS', 0),
-(965, 41, 3, 11, 'STLS', 2),
-(966, 41, 3, 11, 'BLKS', 0),
-(967, 41, 3, 11, 'FLS', 0),
-(968, 1, 1, 11, 'PTS', 18),
-(969, 1, 1, 11, 'REBS', 12),
-(970, 1, 1, 11, 'ASTS', 4),
-(971, 1, 1, 11, 'STLS', 0),
-(972, 1, 1, 11, 'BLKS', 2),
-(973, 1, 1, 11, 'FLS', 0),
-(974, 2, 1, 11, 'PTS', 4),
-(975, 2, 1, 11, 'REBS', 5),
-(976, 2, 1, 11, 'ASTS', 0),
-(977, 2, 1, 11, 'STLS', 1),
-(978, 2, 1, 11, 'BLKS', 0),
-(979, 2, 1, 11, 'FLS', 0),
-(980, 7, 1, 11, 'PTS', 8),
-(981, 7, 1, 11, 'REBS', 4),
-(982, 7, 1, 11, 'ASTS', 5),
-(983, 7, 1, 11, 'STLS', 0),
-(984, 7, 1, 11, 'BLKS', 0),
-(985, 7, 1, 11, 'FLS', 0),
-(986, 8, 1, 11, 'PTS', 3),
-(987, 8, 1, 11, 'REBS', 3),
-(988, 8, 1, 11, 'ASTS', 1),
-(989, 8, 1, 11, 'STLS', 0),
-(990, 8, 1, 11, 'BLKS', 0),
-(991, 8, 1, 11, 'FLS', 0),
-(992, 10, 1, 11, 'PTS', 4),
-(993, 10, 1, 11, 'REBS', 4),
-(994, 10, 1, 11, 'ASTS', 5),
-(995, 10, 1, 11, 'STLS', 2),
-(996, 10, 1, 11, 'BLKS', 0),
-(997, 10, 1, 11, 'FLS', 0),
-(998, 9, 1, 11, 'PTS', 6),
-(999, 9, 1, 11, 'REBS', 2),
-(1000, 9, 1, 11, 'ASTS', 3),
-(1001, 9, 1, 11, 'STLS', 4),
-(1002, 9, 1, 11, 'BLKS', 0),
-(1003, 9, 1, 11, 'FLS', 0),
-(1004, 6, 1, 11, 'PTS', 11),
-(1005, 6, 1, 11, 'REBS', 3),
-(1006, 6, 1, 11, 'ASTS', 0),
-(1007, 6, 1, 11, 'STLS', 1),
-(1008, 6, 1, 11, 'BLKS', 0),
-(1009, 6, 1, 11, 'FLS', 0),
-(1010, 5, 1, 11, 'PTS', 2),
-(1011, 5, 1, 11, 'REBS', 2),
-(1012, 5, 1, 11, 'ASTS', 0),
-(1013, 5, 1, 11, 'STLS', 1),
-(1014, 5, 1, 11, 'BLKS', 0),
-(1015, 5, 1, 11, 'FLS', 0),
-(1016, 13, 1, 11, 'PTS', 12),
-(1017, 13, 1, 11, 'REBS', 3),
-(1018, 13, 1, 11, 'ASTS', 0),
-(1019, 13, 1, 11, 'STLS', 1),
-(1020, 13, 1, 11, 'BLKS', 2),
-(1021, 13, 1, 11, 'FLS', 0),
-(1022, 14, 1, 11, 'PTS', 6),
-(1023, 14, 1, 11, 'REBS', 7),
-(1024, 14, 1, 11, 'ASTS', 2),
-(1025, 14, 1, 11, 'STLS', 1),
-(1026, 14, 1, 11, 'BLKS', 2),
-(1027, 14, 1, 11, 'FLS', 0),
-(1028, 15, 1, 11, 'PTS', 2),
-(1029, 15, 1, 11, 'REBS', 4),
-(1030, 15, 1, 11, 'ASTS', 0),
-(1031, 15, 1, 11, 'STLS', 1),
-(1032, 15, 1, 11, 'BLKS', 0),
-(1033, 15, 1, 11, 'FLS', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `results`
---
-
-CREATE TABLE `results` (
-  `id` int(11) NOT NULL,
-  `game_number` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `team1_score` int(200) NOT NULL,
-  `team2_score` int(200) NOT NULL,
-  `winner_id` int(11) NOT NULL,
-  `losser_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `results`
---
-
-INSERT INTO `results` (`id`, `game_number`, `date`, `team1_score`, `team2_score`, `winner_id`, `losser_id`) VALUES
-(1, 1, '2022-10-23', 50, 60, 1, 4),
-(2, 2, '2022-11-05', 58, 83, 2, 3),
-(3, 3, '2022-11-05', 67, 55, 1, 4),
-(4, 4, '2022-11-06', 59, 51, 1, 3),
-(5, 5, '2022-11-06', 65, 60, 2, 4),
-(6, 6, '2022-11-12', 67, 74, 2, 1),
-(7, 7, '2022-11-13', 77, 66, 4, 3),
-(8, 8, '2022-11-19', 62, 72, 4, 3),
-(9, 9, '2022-11-20', 73, 68, 2, 1),
-(10, 10, '2022-11-26', 85, 75, 2, 3),
-(11, 11, '2022-11-27', 76, 73, 1, 3),
-(12, 12, '2022-12-03', 0, 0, 0, 0),
-(13, 13, '2022-12-04', 0, 0, 0, 0),
-(14, 14, '2022-12-04', 0, 0, 0, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `schedule`
---
-
-CREATE TABLE `schedule` (
-  `id` int(11) NOT NULL,
-  `date` date NOT NULL,
-  `team1` varchar(128) NOT NULL,
-  `team2` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `schedule`
---
-
-INSERT INTO `schedule` (`id`, `date`, `team1`, `team2`) VALUES
-(1, '2022-10-23', 'Blue Sharks', 'Green Dragonfish'),
-(2, '2022-11-05', 'Purple Betta', 'Red Barracuda'),
-(3, '2022-11-05', 'Green Dragonfish', 'Blue Sharks'),
-(4, '2022-11-06', 'Green Dragonfish', 'Purple Betta'),
-(5, '2022-11-06', 'Red Barracuda', 'Blue Sharks'),
-(6, '2022-11-12', 'Green Dragonfish', 'Red Barracuda'),
-(7, '2022-11-13', 'Blue Sharks', 'Purple Betta'),
-(8, '2022-11-19', 'Purple Betta', 'Blue Sharks'),
-(9, '2022-11-20', 'Red Barracuda', 'Green Dragonfish'),
-(10, '2022-11-26', 'Red Barracuda', 'Purple Betta'),
-(11, '2022-11-27', 'Green Dragonfish', 'Purple Betta'),
-(12, '2022-12-03', 'Blue Sharks', 'Red Barracuda'),
-(13, '2022-12-04', 'TBA', 'TBA'),
-(14, '2022-12-04', 'TBA', 'TBA');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `standings`
---
-
-CREATE TABLE `standings` (
-  `id` int(11) NOT NULL,
-  `img_loc` varchar(128) NOT NULL,
-  `teams` varchar(128) NOT NULL,
-  `win` int(11) NOT NULL,
-  `loss` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `standings`
---
-
-INSERT INTO `standings` (`id`, `img_loc`, `teams`, `win`, `loss`) VALUES
-(1, 'green.png', 'Dragonfish', 4, 2),
-(2, 'blue.png', 'Sharks', 2, 3),
-(3, 'purple.png', 'Betta', 0, 6),
-(4, 'red.png', 'Barracuda', 5, 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `teams`
---
-
-CREATE TABLE `teams` (
-  `id` int(11) NOT NULL,
-  `team_name` varchar(128) NOT NULL,
-  `color` varchar(128) NOT NULL,
-  `img_loc` varchar(128) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `teams`
---
-
-INSERT INTO `teams` (`id`, `team_name`, `color`, `img_loc`) VALUES
-(1, 'Dragonfish', 'Green', 'green.png'),
-(2, 'Barracuda', 'Red', 'red.png'),
-(3, 'Betta', 'Purple', 'purple.png'),
-(4, 'Sharks', 'Blue', 'blue.png');
+(938, 1, 1, 11, 'PTS', 18),
+(939, 1, 1, 11, 'REBS', 12),
+(940, 1, 1, 11, 'ASTS', 4),
+(941, 1, 1, 11, 'BLKS', 2),
+(942, 2, 1, 11, 'PTS', 4),
+(943, 2, 1, 11, 'REBS', 5),
+(944, 2, 1, 11, 'STLS', 1),
+(945, 7, 1, 11, 'PTS', 8),
+(946, 7, 1, 11, 'REBS', 4),
+(947, 7, 1, 11, 'ASTS', 5),
+(948, 8, 1, 11, 'PTS', 3),
+(949, 8, 1, 11, 'REBS', 3),
+(950, 8, 1, 11, 'ASTS', 1),
+(951, 10, 1, 11, 'PTS', 4),
+(952, 10, 1, 11, 'REBS', 4),
+(953, 10, 1, 11, 'ASTS', 5),
+(954, 10, 1, 11, 'STLS', 2),
+(955, 9, 1, 11, 'PTS', 6),
+(956, 9, 1, 11, 'REBS', 2),
+(957, 9, 1, 11, 'ASTS', 3),
+(958, 9, 1, 11, 'STLS', 4),
+(959, 6, 1, 11, 'PTS', 11),
+(960, 6, 1, 11, 'REBS', 3),
+(961, 6, 1, 11, 'STLS', 1),
+(962, 5, 1, 11, 'PTS', 2),
+(963, 5, 1, 11, 'REBS', 2),
+(964, 5, 1, 11, 'STLS', 1),
+(965, 13, 1, 11, 'PTS', 12),
+(966, 13, 1, 11, 'REBS', 3),
+(967, 13, 1, 11, 'STLS', 1),
+(968, 13, 1, 11, 'BLKS', 2),
+(969, 14, 1, 11, 'PTS', 6),
+(970, 14, 1, 11, 'REBS', 7),
+(971, 14, 1, 11, 'ASTS', 2),
+(972, 14, 1, 11, 'STLS', 1),
+(973, 14, 1, 11, 'BLKS', 1),
+(974, 15, 1, 11, 'PTS', 2),
+(975, 15, 1, 11, 'REBS', 4),
+(976, 15, 1, 11, 'STLS', 1),
+(977, 32, 3, 11, 'PTS', 11),
+(978, 32, 3, 11, 'REBS', 6),
+(979, 32, 3, 11, 'ASTS', 2),
+(980, 32, 3, 11, 'STLS', 2),
+(981, 34, 3, 11, 'PTS', 4),
+(982, 34, 3, 11, 'REBS', 10),
+(983, 34, 3, 11, 'ASTS', 3),
+(984, 36, 3, 11, 'PTS', 22),
+(985, 36, 3, 11, 'REBS', 4),
+(986, 36, 3, 11, 'ASTS', 1),
+(987, 36, 3, 11, 'STLS', 1),
+(988, 38, 3, 11, 'PTS', 34),
+(989, 38, 3, 11, 'REBS', 8),
+(990, 38, 3, 11, 'ASTS', 1),
+(991, 38, 3, 11, 'STLS', 1),
+(992, 41, 3, 11, 'PTS', 2),
+(993, 41, 3, 11, 'REBS', 14),
+(994, 41, 3, 11, 'STLS', 2);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `players`
---
-ALTER TABLE `players`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `player_stats`
@@ -1265,68 +1030,14 @@ ALTER TABLE `player_stats`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `results`
---
-ALTER TABLE `results`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `schedule`
---
-ALTER TABLE `schedule`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `standings`
---
-ALTER TABLE `standings`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `teams`
---
-ALTER TABLE `teams`
-  ADD PRIMARY KEY (`id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `players`
---
-ALTER TABLE `players`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `player_stats`
 --
 ALTER TABLE `player_stats`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1034;
-
---
--- AUTO_INCREMENT for table `results`
---
-ALTER TABLE `results`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `schedule`
---
-ALTER TABLE `schedule`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
-
---
--- AUTO_INCREMENT for table `standings`
---
-ALTER TABLE `standings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `teams`
---
-ALTER TABLE `teams`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=995;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
