@@ -2,12 +2,12 @@
     require_once 'includes/dbh.inc.php';
     require_once 'includes/functions.inc.php';
     $stats = getTSP($connection);
-    $page = "player-stats";
+    $page = "tsp";
     include('header.html');
 ?>
 
      <section class="roster">
-            <h1>Roster</h1>
+            <h1>Total Statistical Points</h1>
         <div class="table-responsive">
             <table class="table table-dark" id="tsp">
                 <thead>
@@ -31,6 +31,6 @@
             </table>
         </div>
     </section>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-</body>
-</html>
+<?php
+    include('footer.html');
+?>

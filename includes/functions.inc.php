@@ -219,3 +219,47 @@ function getTSP($connection) {
     }
     mysqli_stmt_close($stmt);
 }
+
+function loginCredentialsExists($connection, $username, $email) {
+    $sql = "SELECT * FROM administrators WHERE username=?";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../login.html?error=stmterror");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+
+    $result = mysqli_stmt_get_result($stmt);
+    if ($row = mysqli_fetch_assoc($result)) {
+        return $row;
+    } 
+    else {
+        $result = false;
+        return $result;
+    }
+
+    mysqli_stmt_close($stmt);
+}
+
+function loginUser($connection, $username, $password){
+    $loginCredentialsExists = loginCredentialsExists($connection, $username, $username);
+    if ($loginCredentialsExists === false) {
+        header("location: ../login.html?error=wrongaccount");
+        exit();
+    }
+    $passwordhashed = $loginCredentialsExists['password'];
+    $checkPassword = password_verify($password, $passwordhashed);
+
+    if ($checkPassword === false) {
+        header("location: ../login.html?error=wrongpassword");
+        exit();
+    }
+    else if($checkPassword === true) {
+        session_start();
+        $adminData = $_SESSION['admin-data'] = $loginCredentialsExists;
+        header("location: ../index.html");
+        exit();
+    }
+}

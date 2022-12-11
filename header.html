@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once 'includes/dbh.inc.php';
     require_once 'includes/functions.inc.php';
 ?>
@@ -9,6 +10,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Rose Pointe Sports</title>
+    <!-- Datatables Export Buttons -->
+    <link rel="stylesheet" href="assets/bootstrap/css/datatables.min.css">
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
@@ -23,10 +26,6 @@
     ></script>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
-    <script defer type="text/javascript" src="assets/js/function.inc.js"></script>
     <link rel="shortcut icon" href="assets/images/rosepointe.ico" type="image/x-icon">
 </head>
 <body>
@@ -49,8 +48,19 @@
                     <li class="nav-item"><a class="nav-link <?php if ($page == 'roster') {echo 'active';} ?>" href="roster.html">Roster</a></li>
                     <li class="nav-item"><a class="nav-link <?php if ($page == 'player-stats') {echo 'active';} ?>" href="player-stats.html">Stats</a></li>
                     <li class="nav-item"><a class="nav-link <?php if ($page == 'awards-criteria') {echo 'active';} ?>" href="awards-criteria.html">Awards Criteria</a></li>
+                    <?php
+                        if (!isset($_SESSION['admin-data'])) {
+                    ?>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'login') {echo 'active';} ?>" href="login.html">Administrator Login<br></a></li>
+                    <?php
+                        } else {
+                    ?>
                     <li class="nav-item"><a class="nav-link <?php if ($page == 'add-stats') {echo 'active';} ?>" href="add-stats.html">Add stats</a></li>
-                    <li class="nav-item"><a class="nav-link <?php if ($page == 'add-stats') {echo 'active';} ?>" href="tsp.html">Total Statistical Points</a></li>
+                    <li class="nav-item"><a class="nav-link <?php if ($page == 'tsp') {echo 'active';} ?>" href="tsp.html">Total Statistical Points</a></li>
+                    <li class="nav-item"><a class="nav-link" href="includes/logout.inc.php">Logout</a></li>
+                    <?php
+                        }
+                    ?>
                 </ul>
             </div>
         </div>
