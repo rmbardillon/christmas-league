@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 01:23 PM
+-- Generation Time: Jan 10, 2023 at 01:25 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `christmas_league`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `administrators`
+--
+
+CREATE TABLE `administrators` (
+  `id` int(11) NOT NULL,
+  `username` varchar(128) NOT NULL,
+  `name` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `administrators`
+--
+
+INSERT INTO `administrators` (`id`, `username`, `name`, `password`) VALUES
+(1, 'adminrbardillon', 'Romeo Jr Bardillon', '$2y$10$3NBm2BfwL2U8nrWowsm.we9H1j8nvKndVh45fIBSrCG5nMN.S4qkm');
 
 -- --------------------------------------------------------
 
@@ -1253,16 +1273,25 @@ INSERT INTO `teams` (`id`, `team_name`, `color`, `img_loc`) VALUES
 --
 
 --
+-- Indexes for table `administrators`
+--
+ALTER TABLE `administrators`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `players`
 --
 ALTER TABLE `players`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_team_id` (`team`);
 
 --
 -- Indexes for table `player_stats`
 --
 ALTER TABLE `player_stats`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_ck` (`player_id`),
+  ADD KEY `fk_ti` (`team_id`);
 
 --
 -- Indexes for table `results`
@@ -1291,6 +1320,12 @@ ALTER TABLE `teams`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `administrators`
+--
+ALTER TABLE `administrators`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `players`
@@ -1327,6 +1362,23 @@ ALTER TABLE `standings`
 --
 ALTER TABLE `teams`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `players`
+--
+ALTER TABLE `players`
+  ADD CONSTRAINT `fk_team_id` FOREIGN KEY (`team`) REFERENCES `teams` (`id`);
+
+--
+-- Constraints for table `player_stats`
+--
+ALTER TABLE `player_stats`
+  ADD CONSTRAINT `fk_ck` FOREIGN KEY (`player_id`) REFERENCES `players` (`id`),
+  ADD CONSTRAINT `fk_ti` FOREIGN KEY (`team_id`) REFERENCES `teams` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
